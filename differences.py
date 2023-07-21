@@ -6,6 +6,8 @@ def image_diff(image_path1, image_path2, output_path=None):
     # Open the images
     image1 = Image.open(image_path1)
     image2 = Image.open(image_path2)
+    img1_resized = cv.resize(image1, (224, 224), interpolation=cv.INTER_NEAREST)
+    diff_resized = cv.resize(image2, (224, 224), interpolation=cv.INTER_NEAREST)
 
     # Convert the images to numpy arrays
     array1 = np.array(image1)
