@@ -104,7 +104,7 @@ x = np.array(imagelist)
 np.savez("C:\\aditi\\competitions\\hackerx4\\x_images_arrays_forClutter", x)
 np.savez("C:\\aditi\\competitions\\hackerx4\\y_labels_forClutter", y) """ 
 
-
+""" """ 
 x1 = np.load("C:\\aditi\\competitions\\hackerx4\\x_images_arrays_forClutter.npz")
 y1 = np.load("C:\\aditi\\competitions\\hackerx4\\y_labels_forClutter.npz")
 
@@ -235,4 +235,3 @@ print(result)
 
 print(y_test2[1:5])
 print(y_pred2[1:5])
-

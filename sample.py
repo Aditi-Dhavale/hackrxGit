@@ -86,7 +86,7 @@ diff.show() """
 
 
 # import module
-from PIL import Image, ImageChops, ImageOps
+""" from PIL import Image, ImageChops, ImageOps
 
 import cv2
 import numpy as np
@@ -150,8 +150,10 @@ cv2.imwrite('C://aditi/competitions/hackrxGit/aligned.jpg', transformed_img)
 img1 = Image.open("C://aditi/competitions/hackrxGit/bajajss1.jfif")
 img2 = Image.open("C://aditi/competitions/hackrxGit/aligned.jpg")
 
-""" img1 = img1.resize((256, 256))
-img2 = img2.resize((256, 256)) """
+""" 
+#img1 = img1.resize((256, 256))
+#img2 = img2.resize((256, 256)) 
+"""
 
 # applying grayscale method
 img11= ImageOps.grayscale(img1)
@@ -245,4 +247,35 @@ cv.imwrite("C://aditi/competitions/hackrxGit/final.png", finished)
 
 # show final image - press any key to close
 cv.imshow('finished', finished)
-cv.waitKey(0)
+cv.waitKey(0) """
+
+
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Replace with the path to your web driver
+driver = webdriver.Chrome('/path/to/chromedriver')
+
+# Replace with the URL of the webpage you want to take screenshots of
+url = 'https://www.bajajfinserv.in/'
+driver.get(url)
+
+# Wait for the page to load
+time.sleep(5)
+
+# Get the total height of the page
+total_height = driver.execute_script("return document.body.scrollHeight")
+
+# Set the initial scroll position and the scroll size
+scroll_position = 0
+scroll_size = 500
+
+# Scroll down the page and take screenshots
+while scroll_position < total_height:
+    driver.execute_script(f"window.scrollTo(0, {scroll_position});")
+    time.sleep(1)
+    driver.save_screenshot(f'screenshot_{scroll_position}.png')
+    scroll_position += scroll_size
+
+driver.quit()

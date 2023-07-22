@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 
 def boundingBox(path1,path2):
-    # Load images
+# Load images
     before = cv2.imread(path1)
     after = cv2.imread(path2)
 
@@ -42,22 +42,24 @@ def boundingBox(path1,path2):
             cv2.rectangle(diff_box, (x, y), (x + w, y + h), (36,255,12), 2)
             cv2.drawContours(mask, [c], 0, (255,255,255), -1)
             cv2.drawContours(filled_after, [c], 0, (0,255,0), -1)
-    """ 
-    cv2.imshow('before', before)
-    cv2.imshow('after', after)
-    cv2.imshow('diff', diff)
-    cv2.imshow('diff_box', diff_box)
-    cv2.imshow('mask', mask)
-    cv2.imshow('filled after', filled_after)
-    cv2.waitKey() """
+    
+        # cv2.imshow('before', before)
+        cv2.imshow('after', after)
+        # cv2.imshow('diff', diff)
+        # cv2.imshow('diff_box', diff_box)
+        # cv2.imshow('mask', mask)
+        # cv2.imshow('filled after', filled_after)
+        cv2.waitKey()
 
-    beforergb = cv2.cvtColor(before, cv2.COLOR_BGR2RGB)
+    """ beforergb = cv2.cvtColor(before, cv2.COLOR_BGR2RGB)
     afterrgb = cv2.cvtColor(after, cv2.COLOR_BGR2RGB)
     diffrgb = cv2.cvtColor(diff, cv2.COLOR_BGR2RGB)
     diff_boxrgb = cv2.cvtColor(diff_box, cv2.COLOR_BGR2RGB)
     maskrgb = cv2.cvtColor(mask, cv2.COLOR_BGR2RGB)
-    filled_afterrgb = cv2.cvtColor(filled_after, cv2.COLOR_BGR2RGB)
-    plt.imshow(beforergb)
+    filled_afterrgb = cv2.cvtColor(filled_after, cv2.COLOR_BGR2RGB) """
+
+
+    """ plt.imshow(beforergb)
     plt.axis('off')  # Remove axes ticks and labels
     plt.show()
     plt.imshow(afterrgb)
@@ -66,13 +68,15 @@ def boundingBox(path1,path2):
     plt.imshow(diffrgb)
     plt.axis('off')  # Remove axes ticks and labels
     plt.show()
+    
     plt.imshow(diff_boxrgb)
     plt.axis('off')  # Remove axes ticks and labels
     plt.show()
+
     plt.imshow(maskrgb)
     plt.axis('off')  # Remove axes ticks and labels
     plt.show()
     plt.imshow(filled_afterrgb)
     plt.axis('off')  # Remove axes ticks and labels
-    plt.show()
+    plt.show() """ 
 
